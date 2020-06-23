@@ -27,7 +27,8 @@ defmodule CardDeck.MixProject do
 
   defp deps do
     [
-      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
@@ -35,6 +36,7 @@ defmodule CardDeck.MixProject do
     [
       # These are the default files included in the package
       files: ~w(lib test .formatter.exs mix.exs README*),
+      licenses: ["Apache-2.0"],
       links: %{"GitHub" =>  "https://github.com/dkuku/elxir_card_deck"}
     ]
   end
