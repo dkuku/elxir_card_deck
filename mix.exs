@@ -5,25 +5,37 @@ defmodule CardDeck.MixProject do
     [
       app: :card_deck,
       version: "0.1.0",
-      elixir: "~> 1.10",
+      elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      package: package(),
+      name: "card_deck",
+      source_url: "https://github.com/dkuku/elxir_card_deck"
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
       extra_applications: [:logger]
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
+  defp description() do
+    "Implements a basic card deck"
+  end
+
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
+    ]
+  end
+
+    defp package() do
+    [
+      # These are the default files included in the package
+      files: ~w(lib test .formatter.exs mix.exs README*),
+      links: %{"GitHub" =>  "https://github.com/dkuku/elxir_card_deck"}
     ]
   end
 end
